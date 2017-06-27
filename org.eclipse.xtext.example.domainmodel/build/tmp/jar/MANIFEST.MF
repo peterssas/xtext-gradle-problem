@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.eclipse.xtext.example.domainmodel; singleton:
+ =true
+Export-Package: org.eclipse.xtext.example.domainmodel,org.eclipse.xtex
+ t.example.domainmodel.domainmodel,org.eclipse.xtext.example.domainmod
+ el.domainmodel.impl,org.eclipse.xtext.example.domainmodel.domainmodel
+ .util,org.eclipse.xtext.example.domainmodel.formatting2,org.eclipse.x
+ text.example.domainmodel.jvmmodel,org.eclipse.xtext.example.domainmod
+ el.parser.antlr,org.eclipse.xtext.example.domainmodel.parser.antlr.in
+ ternal,org.eclipse.xtext.example.domainmodel.services,org.eclipse.xte
+ xt.example.domainmodel.validation,org.eclipse.xtext.example.domainmod
+ el.serializer
+Bundle-Name: Xtext Domainmodel Example
+Bundle-Version: 2.10.0.qualifier
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,org.eclipse.xte
+ xt.util,org.eclipse.emf.mwe2.launch;resolution:=optional,org.eclipse.
+ emf.ecore;bundle-version="2.10.2",org.eclipse.emf.common;bundle-versi
+ on="2.10.1",org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",org.ecli
+ pse.xtext.xbase,org.eclipse.xtext.common.types,org.eclipse.xtext.xbas
+ e.lib;visibility:=reexport,org.eclipse.xtext.ui.codetemplates,org.obj
+ ectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,org.ec
+ lipse.equinox.common
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Eclipse Xtext
+Import-Package: org.apache.log4j;version="1.2.15"
+

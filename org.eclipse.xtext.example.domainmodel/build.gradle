@@ -1,0 +1,25 @@
+plugins {
+  id 'java'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src', 'src-gen', 'xtend-gen']
+        }
+        resources  {
+            srcDirs = ['src', 'src-gen', 'xtend-gen']
+	    }
+    }
+}
+
+jar {
+	manifest {
+		from ('META-INF/MANIFEST.MF')
+	}
+}
+
+dependencies {
+	compile 'org.eclipse.xtext:org.eclipse.xtext:2.10+'
+	compile 'org.eclipse.xtext:org.eclipse.xtext.xbase:2.10+'
+}
