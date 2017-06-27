@@ -1,0 +1,56 @@
+plugins {
+  id 'org.xtext.builder' version '1.0.18'
+  id 'java'
+}
+
+System.setProperty("file.encoding", "UTF-8")
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.5'
+}
+
+allprojects {
+	repositories {
+		jcenter()
+	}
+}
+
+xtext {
+	version = '2.10.0'
+    languages {
+    	domainmodel {
+      	    fileExtension = 'dmodel'
+        	setup = 'org.eclipse.xtext.example.domainmodel.DomainmodelStandaloneSetup'
+        	generator {
+				javaSourceLevel = '1.8'
+				outlets {
+					DEFAULT_OUTPUT {
+						producesJava = true
+						cleanAutomatically = false
+					}
+				}
+  			}	
+      	}
+     }
+     sourceSets {
+        main {
+        	output {
+        		dir (xtext.languages.domainmodel.generator.outlets.DEFAULT_OUTPUT, 'src/main/java')
+        	}
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', 'src-gen']
+        }
+    }
+}
+
+dependencies {
+	xtextLanguages project(':org.eclipse.xtext.example.domainmodel')
+	
+	compile 'org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.10+'
+}
