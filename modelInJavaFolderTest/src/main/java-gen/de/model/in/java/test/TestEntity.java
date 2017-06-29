@@ -1,7 +1,6 @@
 package de.model.in.java.test;
 
 import de.model.in.java.test.TestBean;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 
 @SuppressWarnings("all")
@@ -9,7 +8,7 @@ public class TestEntity extends TestBean {
   public TestEntity() {
   }
   
-  public TestEntity(final Procedure1<TestEntity> initializer) {
+  public TestEntity(final org.eclipse.xtext.xbase.lib.Procedures$Procedure1 initializer) {
     initializer.apply(this);
   }
   

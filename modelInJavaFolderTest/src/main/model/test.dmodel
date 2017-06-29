@@ -4,6 +4,7 @@ package de.model.in.java.test {
 	entity TestEntity extends TestBean {
 		op print () : String {
 			firstname
+			
 		}
 	}
 }
