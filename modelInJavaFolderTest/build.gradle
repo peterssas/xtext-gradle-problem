@@ -26,6 +26,9 @@ xtext {
 				outlets {
 					DEFAULT_OUTPUT {
 						producesJava = true
+					}
+					JAVA_OUTPUT {
+						producesJava = true
 						cleanAutomatically = false
 					}
 				}
@@ -34,20 +37,15 @@ xtext {
      }
      sourceSets {
         main {
+        	srcDir 'src/main/model'
         	output {
-        		dir (xtext.languages.domainmodel.generator.outlets.DEFAULT_OUTPUT, 'src/main/java')
+        		dir (xtext.languages.domainmodel.generator.outlets.DEFAULT_OUTPUT, 'src/main/java-gen')
+        		dir (xtext.languages.domainmodel.generator.outlets.JAVA_OUTPUT, 'src/main/java-gen-once')
         	}
         }
     }
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src/main/java', 'src-gen']
-        }
-    }
-}
 
 dependencies {
 	xtextLanguages project(':org.eclipse.xtext.example.domainmodel')

@@ -1,0 +1,17 @@
+#Eclipse-Projekt-Dateien ignorieren
+**/.settings
+**/.classpath
+**/.project
+
+**/.checkstyle
+**/.eclipse-pmd
+**/.pmd
+**/.ruleset
+
+**/bin
+**/build
+**/dist
+**/.gradle
+**/tmp
+
+**/gradle*

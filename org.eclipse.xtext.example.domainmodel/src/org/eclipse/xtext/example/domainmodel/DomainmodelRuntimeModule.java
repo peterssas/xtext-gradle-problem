@@ -7,10 +7,18 @@
  *******************************************************************************/
 package org.eclipse.xtext.example.domainmodel;
 
+import javax.inject.Singleton;
+
+import org.eclipse.xtext.example.domainmodel.generator.OutputConfigurationAwaredGenerator;
+import org.eclipse.xtext.example.domainmodel.output.DomainmodelOutputConfigurationProvider;
 import org.eclipse.xtext.findReferences.TargetURICollector;
+import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.generator.IOutputConfigurationProvider;
 import org.eclipse.xtext.resource.persistence.IResourceStorageFacade;
 import org.eclipse.xtext.xbase.jvmmodel.JvmModelTargetURICollector;
 import org.eclipse.xtext.xbase.resource.BatchLinkableResourceStorageFacade;
+
+import com.google.inject.Binder;
 
 
 /**
@@ -26,4 +34,14 @@ public class DomainmodelRuntimeModule extends AbstractDomainmodelRuntimeModule {
 		return JvmModelTargetURICollector.class;
 	}
 
+	@Override
+	public Class<? extends IGenerator> bindIGenerator() {
+		return OutputConfigurationAwaredGenerator.class;
+	}
+	
+	@Override
+	public void configure(Binder binder) {
+		super.configure(binder);
+		binder.bind(IOutputConfigurationProvider.class).to(DomainmodelOutputConfigurationProvider.class).in(Singleton.class);
+	}
 }
