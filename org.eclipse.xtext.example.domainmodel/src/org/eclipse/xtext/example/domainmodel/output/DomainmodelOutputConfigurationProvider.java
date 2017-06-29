@@ -24,7 +24,7 @@ public class DomainmodelOutputConfigurationProvider  implements IOutputConfigura
 	public Set<OutputConfiguration> getOutputConfigurations() {
 		OutputConfiguration defaultOutput = new OutputConfiguration("JAVA_OUTPUT");
 		defaultOutput.setDescription("Output folder for generated onced Form-DSL2-Files");
-		defaultOutput.setOutputDirectory("src/main/java/");
+		defaultOutput.setOutputDirectory("src/main/java-gen-once/");
 		defaultOutput.setOverrideExistingResources(false);
 		defaultOutput.setCreateOutputDirectory(true);
 		defaultOutput.setCanClearOutputDirectory(false);

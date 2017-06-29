@@ -28,8 +28,8 @@ xtext {
 						producesJava = true
 					}
 					JAVA_OUTPUT {
-						producesJava = true
 						cleanAutomatically = false
+						producesJava = true
 					}
 				}
   			}	
